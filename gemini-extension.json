@@ -1,0 +1,48 @@
+{
+  "name": "alloydb",
+  "version": "0.0.0",
+  "description": "Create, connect, and interact with an AlloyDB Omni database and data.",
+  "mcpServers": {
+    "alloydb-omni": {
+      "command": "${extensionPath}${/}toolbox",
+      "args": [
+        "--prebuilt",
+        "alloydb-omni",
+        "--stdio"
+      ]
+    }
+  },
+  "contextFileName": "ALLOYDB-OMNI.md",
+  "settings": [
+    {
+      "name": "Host",
+      "description": "Host of the AlloyDB Omni instance",
+      "envVar": "ALLOYDB_OMNI_HOST"
+    },
+    {
+      "name": "Port",
+      "description": "Port of the AlloyDB Omni instance",
+      "envVar": "ALLOYDB_OMNI_PORT"
+    },
+    {
+      "name": "Database",
+      "description": "Name of the database to be connected to",
+      "envVar": "ALLOYDB_OMNI_DATABASE"
+    },
+    {
+      "name": "User",
+      "description": "Username of the database user",
+      "envVar": "ALLOYDB_OMNI_USER"
+    },
+    {
+      "name": "Password",
+      "description": "Password of the database user",
+      "envVar": "ALLOYDB_OMNI_PASSWORD"
+    },
+    {
+      "name": "Query Parameters",
+      "description": "(Optional) Additional query parameters",
+      "envVar": "ALLOYDB_OMNI_QUERY_PARAMS"
+    }
+  ]
+}
