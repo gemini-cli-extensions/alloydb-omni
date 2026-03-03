@@ -17,7 +17,7 @@ name: Package and Upload Release Assets
 # Global variables
 env:
   PACKAGE_NAME: "alloydb"
-  FILES_TO_PACKAGE: "gemini-extension.json ALLOYDB.md LICENSE"
+  FILES_TO_PACKAGE: "gemini-extension.json ALLOYDB-OMNI.md LICENSE"
   GCS_BUCKET_URL: "https://storage.googleapis.com/genai-toolbox/geminicli"
 
 on:
@@ -33,10 +33,10 @@ jobs:
       matrix:
         platform:
           - { os: "linux", arch: "x64", download_path_segment: "linux/amd64", binary_suffix: "", archive_extension: "tar.gz", archive_command: 'tar -czvf "${ARCHIVE_NAME}" -C staging .' }
-          - { os: "darwin", arch: "arm64", download_path_segment: "darwin/arm64", binary_suffix: "", archive_extension: "tar.gz", archive_command: 'tar -czvf "${ARCHIVE_NAME}" -C staging .' } 
+          - { os: "darwin", arch: "arm64", download_path_segment: "darwin/arm64", binary_suffix: "", archive_extension: "tar.gz", archive_command: 'tar -czvf "${ARCHIVE_NAME}" -C staging .' }
           - { os: "darwin", arch: "x64", download_path_segment: "darwin/amd64", binary_suffix: "", archive_extension: "tar.gz", archive_command: 'tar -czvf "${ARCHIVE_NAME}" -C staging .' }
           - { os: "win32", arch: "x64", download_path_segment: "windows/amd64", binary_suffix: ".exe", archive_extension: "zip", archive_command: '(cd staging && zip ../"${ARCHIVE_NAME}" *)' }
-    
+
     steps:
       - name: Checkout code at the new tag
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
@@ -63,12 +63,12 @@ jobs:
           SOURCE_BINARY: ${{ steps.vars.outputs.source_binary }}
         run: |
           DOWNLOAD_URL="${GCS_BUCKET_URL}/v${TOOLBOX_VERSION}/${DOWNLOAD_PATH_SEGMENT}/${SOURCE_BINARY}"
-          
+
           echo "Downloading binary from: ${DOWNLOAD_URL}"
           curl -L --fail -o "${SOURCE_BINARY}" "${DOWNLOAD_URL}"
 
           chmod +x ${SOURCE_BINARY}
-          
+
           echo "Binary downloaded and prepared."
           ls -l
 
@@ -107,7 +107,7 @@ jobs:
         with:
           name: ${{ steps.vars.outputs.archive_name }}
           path: ${{ steps.create_archive.outputs.ARCHIVE_PATH }}
-  
+
   # This job gathers all archives and uploads them to the GitHub Release.
   upload:
     name: Upload all assets to release

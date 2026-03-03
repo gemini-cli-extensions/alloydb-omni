@@ -1,18 +1,16 @@
 # DEVELOPER.md
 
 This document provides instructions for setting up your development environment
-and contributing to the AlloyDB Gemini CLI Extension project.
+and contributing to the AlloyDB Omni Gemini CLI Extension project.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following:
 
-1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above. Installation
+1.  **Gemini CLI:** Install the Gemini CLI version v0.33.0 or above. Installation
     instructions can be found on the official Gemini CLI documentation. You can
     verify your version by running `gemini --version`.
-2.  **AlloyDB Cluster & Instance:** For testing data plane tools, you will need access to an active AlloyDB
-    for PostgreSQL instance. We recommend using Public IP to eliminate the need to create and use a workspace
-    within the same VPC network as the database. 
+2.  For AlloyDB Omni for Kubernetes, you will need to have access to a Kubernetes cluster with AlloyDB Omni operator installed. Instructions can be found on the [AlloyDB Omni for Kubernetes documentation](https://docs.cloud.google.com/alloydb/omni/kubernetes/current/docs/overview).
 
 ## Developing the Extension
 
@@ -23,26 +21,12 @@ The core logic for this extension is handled by a pre-built `toolbox` binary. Th
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/gemini-cli-extensions/alloydb.git
-    cd alloydb
+    git clone https://github.com/gemini-cli-extensions/alloydb-omni.git
+    cd alloydb-omni
     ```
 
 2.  **Download the Toolbox Binary:** The required version of the `toolbox` binary
-    is specified in `toolbox_version.txt`. Download it for your platform.
-
-    ```bash
-    # Read the required version
-    VERSION=$(cat toolbox_version.txt)
-
-    # Download the binary for your platform. The binary must be named `toolbox`.
-    # Adjust the URL for your operating system (`linux/amd64`, `darwin/arm64`, `windows/amd64`).
-    # Example for macOS/amd64:
-    curl -L -o toolbox https://storage.googleapis.com/genai-toolbox/v$VERSION/darwin/amd64/toolbox
-    chmod +x toolbox
-
-    # For Windows, you will need to download the .exe file and rename it to `toolbox`.
-    # The `chmod` command is not required on Windows.
-    ```
+    is specified in `toolbox_version.txt`. Download it for your platform by following the instructions in the [Toolbox documentation](https://github.com/googleapis/genai-toolbox).
 
 3.  **Install the Extension Locally:** Use the Gemini CLI to install the
     extension from your local directory.
@@ -53,7 +37,7 @@ The core logic for this extension is handled by a pre-built `toolbox` binary. Th
     The CLI will prompt you to confirm the installation. Accept it to proceed.
 
 4.  **Testing Changes:** After installation, start the Gemini CLI (`gemini`).
-    You can now interact with the `alloydb` tools to manually test your changes
+    You can now interact with the `alloydb-omni` tools to manually test your changes
     against your connected database.
 
 ## Testing
@@ -82,7 +66,7 @@ are currently tested in the [MCP Toolbox GitHub](https://github.com/googleapis/g
 ## Building the Extension
 
 The "build" process for this extension involves packaging the extension's
-metadata files (`gemini-extension.json`, `ALLOYDB.md`, `LICENSE`) along with the
+metadata files (`gemini-extension.json`, `ALLOYDB-OMNI.md`, `LICENSE`) along with the
 pre-built `toolbox` binary into platform-specific archives (`.tar.gz` or `.zip`).
 
 This process is handled automatically by the
@@ -98,7 +82,7 @@ The primary maintainers for this repository are defined in the
 [`.github/CODEOWNERS`](.github/CODEOWNERS) file:
 
 * `@gemini-cli-extensions/senseai-eco`
-* `@gemini-cli-extensions/alloydb-maintainers`
+* `@gemini-cli-extensions/alloydb-omni-maintainers`
 
 ### Releasing
 
@@ -119,7 +103,7 @@ The process is handled by the [`mirror-changelog.yml`](.github/workflows/mirror-
    the PR body.
 3. **Filtering:** These release notes are filtered to include only changes
    relevant to this extension. The relevance is determined by a keyword (e.g.,
-   `alloydb`), passed as an environment variable in the workflow file.
+   `alloydb-omni`), passed as an environment variable in the workflow file.
 4. **Changelog Injection:** The script formats the filtered entries as
    conventional commits and injects them into the PR body within a
    `BEGIN_COMMIT_OVERRIDE` block.
