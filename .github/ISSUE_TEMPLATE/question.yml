@@ -1,4 +1,4 @@
-# Copyright 2025 Google LLC
+# Copyright 2026 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping us improve! 🙏 Please provide as much information as possible about your question. 
-  
+        Thanks for helping us improve! 🙏 Please provide as much information as possible about your question.
+
   - id: preamble
     type: checkboxes
     attributes:
@@ -46,7 +46,7 @@ body:
     attributes:
       label: Code
       description: "Please paste any useful application code that might be relevant to your question. (if your code is in a public repo, feel free to paste a link!)"
-      
+
   - type: textarea
     id: additional-details
     attributes:
