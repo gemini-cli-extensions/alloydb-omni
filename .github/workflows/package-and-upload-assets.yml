@@ -18,7 +18,7 @@ name: Package and Upload Release Assets
 env:
   PACKAGE_NAME: "alloydb-omni"
   FILES_TO_PACKAGE: "skills gemini-extension.json ALLOYDB-OMNI.md LICENSE"
-  GCS_BUCKET_URL: "https://storage.googleapis.com/genai-toolbox/geminicli"
+  GCS_BUCKET_URL: "https://storage.googleapis.com/mcp-toolbox-for-databases/geminicli"
 
 on:
   release:
