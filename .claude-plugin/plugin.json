@@ -1,0 +1,69 @@
+{
+  "name": "alloydb-omni",
+  "version": "0.1.0",
+  "description": "Create, connect, and interact with an AlloyDB Omni database and data.",
+  "author": "Google LLC",
+  "homepage": "https://github.com/gemini-cli-extensions/alloydb-omni",
+  "license": "Apache-2.0",
+  "mcpServers": {
+    "alloydb-omni": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@google/alloydb-omni-mcp"
+      ],
+      "env": {
+        "ALLOYDB_OMNI_HOST": "${ALLOYDB_OMNI_HOST}",
+        "ALLOYDB_OMNI_PORT": "${ALLOYDB_OMNI_PORT}",
+        "ALLOYDB_OMNI_DATABASE": "${ALLOYDB_OMNI_DATABASE}",
+        "ALLOYDB_OMNI_USER": "${ALLOYDB_OMNI_USER}",
+        "ALLOYDB_OMNI_PASSWORD": "${ALLOYDB_OMNI_PASSWORD}",
+        "ALLOYDB_OMNI_QUERY_PARAMS": "${ALLOYDB_OMNI_QUERY_PARAMS}"
+      }
+    }
+  },
+  "userConfig": [
+    {
+      "name": "ALLOYDB_OMNI_HOST",
+      "description": "Host of the AlloyDB Omni instance",
+      "type": "string",
+      "required": true,
+      "sensitive": false
+    },
+    {
+      "name": "ALLOYDB_OMNI_PORT",
+      "description": "Port of the AlloyDB Omni instance",
+      "type": "string",
+      "required": true,
+      "sensitive": false
+    },
+    {
+      "name": "ALLOYDB_OMNI_DATABASE",
+      "description": "Name of the database to be connected to",
+      "type": "string",
+      "required": true,
+      "sensitive": false
+    },
+    {
+      "name": "ALLOYDB_OMNI_USER",
+      "description": "Username of the database user",
+      "type": "string",
+      "required": false,
+      "sensitive": false
+    },
+    {
+      "name": "ALLOYDB_OMNI_PASSWORD",
+      "description": "Password of the database user",
+      "type": "string",
+      "required": false,
+      "sensitive": false
+    },
+    {
+      "name": "ALLOYDB_OMNI_QUERY_PARAMS",
+      "description": "(Optional) Additional query parameters",
+      "type": "string",
+      "required": false,
+      "sensitive": false
+    }
+  ]
+}
