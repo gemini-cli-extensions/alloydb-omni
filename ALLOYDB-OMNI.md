@@ -50,21 +50,3 @@ When you need to update your connection settings, follow these steps:
 3.  **Update Extension Configuration:** Use the command `gemini extensions config alloydb-omni` to update your settings (e.g. `ALLOYDB_OMNI_DATABASE`, `ALLOYDB_OMNI_HOST`) to point to the new resource.
 4.  **Restart:** Relaunch the Gemini CLI
 5.  **(Optional) Resume conversation:** Resume your conversation with the command: `/chat resume <your-tag>`
-
-## Reusing Project Values
-
-Users may have set project environment variables:
-
-* `ALLOYDB_OMNI_HOST`: The host of the AlloyDB instance.
-* `ALLOYDB_OMNI_PORT`: The port of the AlloyDB instance.
-* `ALLOYDB_OMNI_DATABASE`: The name of the database.
-
-Instead of prompting the user for these values for specific skill calls, prompt the user to verify the reuse of a specific setting value.
-Make sure to not use the environment variable name like `ALLOYDB_OMNI_HOST`, `${ALLOYDB_OMNI_HOST}`, or `$ALLOYDB_OMNI_HOST`.
-The value can be verified by the user using the `gemini extensions config alloydb-omni` command or by checking their local settings.
-
-## Use Full Table Name Format "DATABASE_NAME.SCHEMA_NAME.TABLE_NAME"
-
-**ALWAYS** use the full table name format, `DATABASE_NAME.SCHEMA_NAME.TABLE_NAME` in the generated SQL when executing the `execute_sql` script.
-* Default to using "public" for the schema name.
-* Use command `echo $ALLOYDB_OMNI_DATABASE` to get the current database value.
