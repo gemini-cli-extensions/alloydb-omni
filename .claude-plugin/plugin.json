@@ -5,36 +5,19 @@
   "author": "Google LLC",
   "homepage": "https://github.com/gemini-cli-extensions/alloydb-omni",
   "license": "Apache-2.0",
-  "mcpServers": {
-    "alloydb-omni": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@google/alloydb-omni-mcp"
-      ],
-      "env": {
-        "ALLOYDB_OMNI_HOST": "${ALLOYDB_OMNI_HOST}",
-        "ALLOYDB_OMNI_PORT": "${ALLOYDB_OMNI_PORT}",
-        "ALLOYDB_OMNI_DATABASE": "${ALLOYDB_OMNI_DATABASE}",
-        "ALLOYDB_OMNI_USER": "${ALLOYDB_OMNI_USER}",
-        "ALLOYDB_OMNI_PASSWORD": "${ALLOYDB_OMNI_PASSWORD}",
-        "ALLOYDB_OMNI_QUERY_PARAMS": "${ALLOYDB_OMNI_QUERY_PARAMS}"
-      }
-    }
-  },
   "userConfig": [
     {
       "name": "ALLOYDB_OMNI_HOST",
-      "description": "Host of the AlloyDB Omni instance",
+      "description": "(Optional) Host of the AlloyDB Omni instance. localhost by default.",
       "type": "string",
-      "required": true,
+      "required": false,
       "sensitive": false
     },
     {
       "name": "ALLOYDB_OMNI_PORT",
-      "description": "Port of the AlloyDB Omni instance",
+      "description": "(Optional) Port of the AlloyDB Omni instance. 5432 by default",
       "type": "string",
-      "required": true,
+      "required": false,
       "sensitive": false
     },
     {
@@ -48,14 +31,14 @@
       "name": "ALLOYDB_OMNI_USER",
       "description": "Username of the database user",
       "type": "string",
-      "required": false,
+      "required": true,
       "sensitive": false
     },
     {
       "name": "ALLOYDB_OMNI_PASSWORD",
       "description": "Password of the database user",
       "type": "string",
-      "required": false,
+      "required": true,
       "sensitive": false
     },
     {
