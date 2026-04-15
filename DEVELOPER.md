@@ -6,10 +6,10 @@ This document provides instructions for setting up your development environment 
 
 Before you begin, ensure you have the following:
 
-1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above. Installation instructions can be found on the official Gemini CLI documentation. You can verify your version by running `gemini --version`.
-2.  **Node.js:** Required for running and testing skill scripts locally.
-3.  **AlloyDB Omni Instance:** For testing skills, you will need access to an active AlloyDB Omni instance.
-4.  For AlloyDB Omni for Kubernetes, you will need to have access to a Kubernetes cluster with AlloyDB Omni operator installed. Instructions can be found on the [AlloyDB Omni for Kubernetes documentation](https://docs.cloud.google.com/alloydb/omni/kubernetes/current/docs/overview).
+1.  **Gemini CLI:** Install the Gemini CLI version v0.33.0 or above. Installation
+    instructions can be found on the official Gemini CLI documentation. You can
+    verify your version by running `gemini --version`.
+2.  For AlloyDB Omni for Kubernetes, you will need to have access to a Kubernetes cluster with AlloyDB Omni operator installed. Instructions can be found on the [AlloyDB Omni for Kubernetes documentation](https://docs.cloud.google.com/alloydb/omni/kubernetes/current/docs/overview)
 
 ## Developing the Extension
 
