@@ -14,7 +14,7 @@ To install this extension, the Gemini CLI version must be v0.6.0 or above. The v
 
 This section covers connecting to an AlloyDB database instance.
 
-1.  **Extension Configuration**: This extension requires several settings (e.g., Host, Port, Database, User, and Password). These values are gathered via prompts when you first install or link the extension:
+1.  **Verify Environment Variables**: The extension requires the following environment variables to be set before the Gemini CLI is started:
 
     *   `ALLOYDB_OMNI_HOST`: The host of the AlloyDB instance, default is `localhost`.
     *   `ALLOYDB_OMNI_PORT`: The port of the AlloyDB instance, default is `5432`.
