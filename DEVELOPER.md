@@ -44,6 +44,8 @@ The development process involves installing the extension locally into the Gemin
 
 A GitHub Actions workflow (`.github/workflows/presubmit-tests.yml`) is triggered for every pull request. This workflow primarily verifies that the extension can be successfully installed by the Gemini CLI.
 
+All tools are currently tested in the [MCP Toolbox GitHub](https://github.com/googleapis/mcp-toolbox).
+
 A skills validation workflow (`.github/workflows/skills-validate.yml`) also runs to ensure the integrity of the generated skills.
 
 ### Other GitHub Checks
