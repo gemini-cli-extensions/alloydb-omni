@@ -6,12 +6,12 @@
   "settings": [
     {
       "name": "Host",
-      "description": "Host of the AlloyDB Omni instance",
+      "description": "(Optional) Host of the AlloyDB Omni instance. localhost by default",
       "envVar": "ALLOYDB_OMNI_HOST"
     },
     {
       "name": "Port",
-      "description": "Port of the AlloyDB Omni instance",
+      "description": "(Optional) Port of the AlloyDB Omni instance. 5432 by default",
       "envVar": "ALLOYDB_OMNI_PORT"
     },
     {
