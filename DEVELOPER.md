@@ -52,9 +52,6 @@ A skills validation workflow (`.github/workflows/skills-validate.yml`) also runs
 * **Conventional Commits:** This repository uses [Release Please](https://github.com/googleapis/release-please) to manage releases. Your commit messages must adhere to the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 * **Dependency Updates:** [Renovate](https://github.com/apps/forking-renovate) is configured to automatically create pull requests for dependency updates.
 
-## Building the Extension
-
-Building this extension is as simple as making sure all files are in the right place. The extension is distributed as a source repository, and users install it by pointing to this repository.
 
 ## Maintainer Information
 
