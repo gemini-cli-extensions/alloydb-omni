@@ -51,11 +51,11 @@ Before you begin, ensure you have the following:
 
 Please keep these environment variables handy during the installation process:
 
-*   `ALLOYDB_OMNI_HOST`: The host of your AlloyDB cluster.
-*   `ALLOYDB_OMNI_PORT`: The port of your AlloyDB cluster.
+*   `ALLOYDB_OMNI_HOST`: (Optional: localhost by default) The host of your AlloyDB cluster.
+*   `ALLOYDB_OMNI_PORT`: (Optional: 5432 by default) The port of your AlloyDB cluster.
 *   `ALLOYDB_OMNI_DATABASE`: The name of the database to connect to.
-*   `ALLOYDB_OMNI_USER`: (Optional) The database username.
-*   `ALLOYDB_OMNI_PASSWORD`: (Optional) The password for the database user.
+*   `ALLOYDB_OMNI_USER`: The database username.
+*   `ALLOYDB_OMNI_PASSWORD`: The password for the database user.
 
 ### Installation & Usage
 
