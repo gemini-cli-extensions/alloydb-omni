@@ -2,51 +2,50 @@
   "name": "alloydb-omni",
   "version": "0.1.0",
   "description": "Create, connect, and interact with an AlloyDB Omni database and data.",
-  "author": "Google LLC",
+  "author": {
+    "name": "Google LLC",
+    "email": "data-cloud-ai-integrations@google.com"
+  },
   "homepage": "https://github.com/gemini-cli-extensions/alloydb-omni",
   "license": "Apache-2.0",
-  "userConfig": [
-    {
-      "name": "ALLOYDB_OMNI_HOST",
+  "repository": "https://github.com/gemini-cli-extensions/alloydb-omni",
+  "skills": "./skills/",
+  "userConfig": {
+    "ALLOYDB_OMNI_HOST": {
+      "title": "Host",
       "description": "(Optional) Host of the AlloyDB Omni instance. localhost by default.",
       "type": "string",
-      "required": false,
       "sensitive": false
     },
-    {
-      "name": "ALLOYDB_OMNI_PORT",
+    "ALLOYDB_OMNI_PORT": {
+      "title": "Port",
       "description": "(Optional) Port of the AlloyDB Omni instance. 5432 by default",
       "type": "string",
-      "required": false,
       "sensitive": false
     },
-    {
-      "name": "ALLOYDB_OMNI_DATABASE",
+    "ALLOYDB_OMNI_DATABASE": {
+      "title": "Database",
       "description": "Name of the database to be connected to",
       "type": "string",
-      "required": true,
       "sensitive": false
     },
-    {
-      "name": "ALLOYDB_OMNI_USER",
+    "ALLOYDB_OMNI_USER": {
+      "title": "User",
       "description": "Username of the database user",
       "type": "string",
-      "required": true,
       "sensitive": false
     },
-    {
-      "name": "ALLOYDB_OMNI_PASSWORD",
+    "ALLOYDB_OMNI_PASSWORD": {
+      "title": "Password",
       "description": "Password of the database user",
       "type": "string",
-      "required": true,
       "sensitive": false
     },
-    {
-      "name": "ALLOYDB_OMNI_QUERY_PARAMS",
+    "ALLOYDB_OMNI_QUERY_PARAMS": {
+      "title": "Query Parameters",
       "description": "(Optional) Additional query parameters",
       "type": "string",
-      "required": false,
       "sensitive": false
     }
-  ]
+  }
 }

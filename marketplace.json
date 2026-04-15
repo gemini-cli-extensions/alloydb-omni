@@ -1,0 +1,18 @@
+{
+  "name": "alloydb-omni",
+  "version": "0.1.0",
+  "description": "Create, connect, and interact with an AlloyDB Omni database and data.",
+  "publisher": "Google",
+  "repository": "https://github.com/gemini-cli-extensions/alloydb-omni",
+  "skills": [
+    "./skills/alloydb-omni-data",
+    "./skills/alloydb-omni-performance",
+    "./skills/alloydb-omni-monitor",
+    "./skills/alloydb-omni-optimize",
+    "./skills/alloydb-omni-health",
+    "./skills/alloydb-omni-replication",
+    "./skills/alloydb-omni-access-control",
+    "./skills/alloydb-omni-container",
+    "./skills/alloydb-omni-kubernetes"
+  ]
+}
