@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://github.com/gemini-cli-extensions/alloydb-omni/compare/0.1.0...0.2.0) (2026-04-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* add support for skills ([#7](https://github.com/gemini-cli-extensions/alloydb-omni/issues/7))
+
+### Features
+
+* add claude code plugin config ([#9](https://github.com/gemini-cli-extensions/alloydb-omni/issues/9)) ([8c4c465](https://github.com/gemini-cli-extensions/alloydb-omni/commit/8c4c465f698bbe200fb6c382fcc42ea606feafcd))
+* add codex plugin config ([#10](https://github.com/gemini-cli-extensions/alloydb-omni/issues/10)) ([8d7cef1](https://github.com/gemini-cli-extensions/alloydb-omni/commit/8d7cef1a514f6e5e124fb08f257db3ae542ade9f))
+* add support for skills ([#7](https://github.com/gemini-cli-extensions/alloydb-omni/issues/7)) ([75fe521](https://github.com/gemini-cli-extensions/alloydb-omni/commit/75fe521a1fd8e84540ffc35aa3696c5dd9bd609d))
+* auto update plugin versions using release-please ([#11](https://github.com/gemini-cli-extensions/alloydb-omni/issues/11)) ([077a364](https://github.com/gemini-cli-extensions/alloydb-omni/commit/077a3642ecfcf7ddfeb28641db46cfbf7e514a6d))
+
 ## 0.1.0 (2026-03-18)
 
 
