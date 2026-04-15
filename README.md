@@ -56,6 +56,7 @@ Please keep these environment variables handy during the installation process:
 *   `ALLOYDB_OMNI_DATABASE`: The name of the database to connect to.
 *   `ALLOYDB_OMNI_USER`: The database username.
 *   `ALLOYDB_OMNI_PASSWORD`: The password for the database user.
+*   `ALLOYDB_OMNI_QUERY_PARAMS`: (Optional) Additional query parameters.
 
 ### Installation & Usage
 
