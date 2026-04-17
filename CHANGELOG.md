@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/gemini-cli-extensions/alloydb-omni/compare/0.2.0...0.2.1) (2026-04-17)
+
+
+### Bug Fixes
+
+* update brand name ([#17](https://github.com/gemini-cli-extensions/alloydb-omni/issues/17)) ([e54e5aa](https://github.com/gemini-cli-extensions/alloydb-omni/commit/e54e5aa253dea53d9c99375ee72aee55a496a7e9))
+
 ## [0.2.0](https://github.com/gemini-cli-extensions/alloydb-omni/compare/0.1.0...0.2.0) (2026-04-15)
 
 
