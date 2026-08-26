@@ -1,4 +1,5 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "alloydb-omni",
   "version": "0.2.1",
   "description": "Create, connect, and interact with an AlloyDB Omni database and data.",
@@ -7,7 +8,11 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "homepage": "https://cloud.google.com/alloydb/omni",
-  "license": "Apache-2.0",
   "repository": "https://github.com/gemini-cli-extensions/alloydb-omni",
-  "skills": "./skills/"
+  "license": "Apache-2.0",
+  "keywords": [
+    "alloydb-omni",
+    "alloydb",
+    "database"
+  ]
 }
