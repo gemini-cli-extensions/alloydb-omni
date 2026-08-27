@@ -7,7 +7,65 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "homepage": "https://cloud.google.com/alloydb/omni",
-  "license": "Apache-2.0",
   "repository": "https://github.com/gemini-cli-extensions/alloydb-omni",
-  "skills": "./skills/"
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "userConfig": {
+    "alloydb_omni_host": {
+      "title": "Host",
+      "description": "(Optional) Host of the AlloyDB Omni instance. localhost by default",
+      "type": "string",
+      "sensitive": false
+    },
+    "alloydb_omni_port": {
+      "title": "Port",
+      "description": "(Optional) Port of the AlloyDB Omni instance. 5432 by default",
+      "type": "string",
+      "sensitive": false
+    },
+    "alloydb_omni_database": {
+      "title": "Database",
+      "description": "Name of the database to be connected to",
+      "type": "string",
+      "sensitive": false
+    },
+    "alloydb_omni_user": {
+      "title": "User",
+      "description": "Username of the database user",
+      "type": "string",
+      "sensitive": false
+    },
+    "alloydb_omni_password": {
+      "title": "Password",
+      "description": "Password of the database user",
+      "type": "string",
+      "sensitive": false
+    },
+    "alloydb_omni_query_params": {
+      "title": "Query Parameters",
+      "description": "(Optional) Additional query parameters",
+      "type": "string",
+      "sensitive": false
+    }
+  },
+  "mcpServers": {
+    "alloydb-omni": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "alloydb-omni",
+        "--stdio"
+      ],
+      "env": {
+        "ALLOYDB_OMNI_HOST": "${user_config.alloydb_omni_host}",
+        "ALLOYDB_OMNI_PORT": "${user_config.alloydb_omni_port}",
+        "ALLOYDB_OMNI_DATABASE": "${user_config.alloydb_omni_database}",
+        "ALLOYDB_OMNI_USER": "${user_config.alloydb_omni_user}",
+        "ALLOYDB_OMNI_PASSWORD": "${user_config.alloydb_omni_password}",
+        "ALLOYDB_OMNI_QUERY_PARAMS": "${user_config.alloydb_omni_query_params}"
+      }
+    }
+  }
 }
