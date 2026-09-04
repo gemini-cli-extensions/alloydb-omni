@@ -14,5 +14,60 @@
     "alloydb-omni",
     "alloydb",
     "database"
-  ]
+  ],
+  "extensions": {
+    "com.google.cloud.data.agent-plugins": {
+      "config": [
+        {
+          "key": "ALLOYDB_OMNI_HOST",
+          "title": "Host",
+          "description": "(Optional) Host of the AlloyDB Omni instance. localhost by default"
+        },
+        {
+          "key": "ALLOYDB_OMNI_PORT",
+          "title": "Port",
+          "description": "(Optional) Port of the AlloyDB Omni instance. 5432 by default"
+        },
+        {
+          "key": "ALLOYDB_OMNI_DATABASE",
+          "title": "Database",
+          "description": "Name of the database to be connected to"
+        },
+        {
+          "key": "ALLOYDB_OMNI_USER",
+          "title": "User",
+          "description": "Username of the database user"
+        },
+        {
+          "key": "ALLOYDB_OMNI_PASSWORD",
+          "title": "Password",
+          "description": "Password of the database user"
+        },
+        {
+          "key": "ALLOYDB_OMNI_QUERY_PARAMS",
+          "title": "Query Parameters",
+          "description": "(Optional) Additional query parameters"
+        }
+      ],
+      "gemini": {
+        "mcpServerName": "alloydb-omni",
+        "contextFileName": "ALLOYDB-OMNI.md"
+      },
+      "codex": {
+        "interface": {
+          "displayName": "AlloyDB Omni",
+          "shortDescription": "Create, connect, and interact with an AlloyDB Omni database and data.",
+          "developerName": "Google LLC",
+          "category": "Database",
+          "capabilities": [
+            "Read",
+            "Write"
+          ],
+          "defaultPrompt": [
+            "You are a highly skilled database engineer and database administrator. Your purpose is to help the developer build and interact with databases and utilize data context throughout the entire software delivery cycle."
+          ]
+        }
+      }
+    }
+  }
 }

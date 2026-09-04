@@ -1,9 +1,9 @@
-# AlloyDB Omni Agent Skills
+# AlloyDB Omni
 
 > [!NOTE]
 > Currently in beta (pre-v1.0), and may see breaking changes until the first stable release (v1.0).
 
-This repository provides a set of agent skills to interact with [AlloyDB Omni](https://docs.cloud.google.com/alloydb/omni/docs) instances. These skills can be used with various AI agents, including [Antigravity](https://antigravity.google/), [Claude Code](https://claude.com/product/claude-code) and [Codex](https://developers.openai.com/codex), to manage your databases, execute queries, explore schemas, and troubleshoot issues using natural language prompts.
+This repository packages [MCP Toolbox](https://github.com/googleapis/mcp-toolbox)'s prebuilt `alloydb-omni` server as a plugin/extension to interact with [AlloyDB Omni](https://docs.cloud.google.com/alloydb/omni/docs) instances. It can be used with various AI agents, including [Antigravity](https://antigravity.google/), [Claude Code](https://claude.com/product/claude-code) and [Codex](https://developers.openai.com/codex), to manage your databases, execute queries, explore schemas, and troubleshoot issues using natural language prompts.
 
 > [!IMPORTANT]
 > **We Want Your Feedback!**
@@ -14,7 +14,7 @@ This repository provides a set of agent skills to interact with [AlloyDB Omni](h
 
 ## Table of Contents
 
-- [Why Use AlloyDB Omni Agent Skills?](#why-use-alloydb-omni-agent-skills)
+- [Why Use AlloyDB Omni?](#why-use-alloydb-omni)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Configuration](#configuration)
@@ -22,13 +22,13 @@ This repository provides a set of agent skills to interact with [AlloyDB Omni](h
     - [Antigravity](#antigravity)
     - [Claude Code](#claude-code)
     - [Codex](#codex)
-- [Installing using open agent skills tool](#installing-using-open-agent-skills-tool)
 - [Installing via a compatible Agent Plugins client](#installing-via-a-compatible-agent-plugins-client)
 - [Usage Examples](#usage-examples)
-- [Supported Skills](#supported-skills)
+- [Available Tools](#available-tools)
+- [Generating Skills Instead](#generating-skills-instead)
 - [Troubleshooting](#troubleshooting)
 
-## Why Use AlloyDB Omni Agent Skills?
+## Why Use AlloyDB Omni?
 
 - **Seamless Workflow:** Integrates seamlessly into your AI agent's environment. No need to constantly switch contexts for common database tasks.
 - **Natural Language Queries:** Stop wrestling with complex commands. Explore schemas and query data by describing what you want in plain English.
@@ -62,7 +62,7 @@ Please keep these environment variables handy during the installation process:
 
 ### Installation & Usage
 
-To start interacting with your database, install the skills for your preferred AI agent, then launch the agent and use natural language to ask questions or perform tasks.
+To start interacting with your database, install the extension for your preferred AI agent, then launch the agent and use natural language to ask questions or perform tasks.
 
 For the latest version, check the [releases page][releases].
 
@@ -91,28 +91,18 @@ See <a href="https://antigravity.google/docs/gcli-migration">Migrating from Gemi
 
 #### Antigravity 2.0 (IDE)
 
-**1. Clone the Repo:**
+**1. Install the plugin:**
+
+Install the plugin directly from the remote GitHub repository:
 
 ```bash
-git clone --branch 0.2.1 https://github.com/gemini-cli-extensions/alloydb-omni.git
+agy plugin install https://github.com/gemini-cli-extensions/alloydb-omni
 ```
 
-**2. Install the skills:**
-
-Choose a location for the skills:
-- **Global (all workspaces):** `~/.gemini/antigravity/skills/`
-- **Workspace-specific:** `<workspace-root>/.agents/skills/`
-
-Copy the skill folders from the cloned repository's `skills/` directory to your chosen location:
-
-```bash
-cp -R alloydb-omni/skills/* ~/.gemini/antigravity/skills/
-```
-
-**3. Set env vars:**
+**2. Set env vars:**
 Set your environment vars as described in the [configuration section](#configuration).
 
-_(Tip: Antigravity 2.0 automatically discovers skills in these directories at the start of a session. You can verify they are active by running the `/skills` command in your active session.)_
+_(Tip: You can verify the MCP server is active by running the `/mcp` command in your active session.)_
 
 #### Antigravity CLI
 
@@ -147,8 +137,7 @@ claude
 /plugin install alloydb-omni@claude-plugins-official
 ```
 
-_(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)_
-
+_(Tip: Run `/plugin list` inside Claude Code to verify the plugin is active, or `/reload-plugins` if you just installed it.)
 </details>
 
 <details>
@@ -176,23 +165,7 @@ codex plugin marketplace upgrade data-agent-kit
 
 </details>
 
-## Installing using [open agent skills tool](https://github.com/vercel-labs/skills)
-
-You can install skills using the `npx skills` command.
-
-**1. Install the skills:**
-
-Run the following command in your terminal to automatically download and register the skills:
-
-```bash
-npx skills add https://github.com/gemini-cli-extensions/alloydb-omni/tree/0.2.1
-```
-
-For detailed info check out the [Skills npm package](https://www.npmjs.com/package/skills).
-
-**2. Set env vars:**
-Set your environment vars as described in the [configuration section](#configuration).
-
+## Installing via a compatible Agent Plugins client
 ## Installing via a compatible Agent Plugins client
 
 This repository is a valid [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec) (v1) plugin. Any [Agent Plugins–compatible client](https://agent-plugins.org/compatible-clients) can install it directly using its own built-in plugin command — no extra tooling required — by pointing at this repository:
@@ -224,19 +197,46 @@ Interact with AlloyDB Omni using natural language right from your IDE:
 * **Generate Code:**
     * "Generate a Python dataclass to represent the 'customers' table."
 
-## Supported Skills
+## Available Tools
 
-The following skills are available in this repository:
+The tools come from MCP Toolbox's prebuilt `alloydb-omni` server, grouped into toolsets:
 
-- [AlloyDB Omni Data](./skills/alloydb-omni-data/SKILL.md) - Use these skills when you need to explore the database structure, identify schema objects like views and triggers, and execute SQL queries to interact with your data.
-- [AlloyDB Omni Performance](./skills/alloydb-omni-performance/SKILL.md) - Use these skills when you need to analyze query performance, generate execution plans, check table/column statistics, and monitor overall database activity.
-- [AlloyDB Omni Monitor](./skills/alloydb-omni-monitor/SKILL.md) - Use these skills when you need to troubleshoot production issues by identifying locks, tracking long-running transactions, and getting a high-level view of server state.
-- [AlloyDB Omni Optimize](./skills/alloydb-omni-optimize/SKILL.md) - Use these skills when you need to fine-tune the database engine settings, manage extensions, or optimize the columnar engine for better analytical performance.
-- [AlloyDB Omni Health](./skills/alloydb-omni-health/SKILL.md) - Use these skills when you need to audit database health, identify storage bloat, find broken indexes, and verify tablespace or maintenance configurations.
-- [AlloyDB Omni Replication](./skills/alloydb-omni-replication/SKILL.md) - Use these skills when you need to monitor the health of database replication, manage sync states between nodes, and audit publication tables for distributed setups.
-- [AlloyDB Omni Access Control](./skills/alloydb-omni-access-control/SKILL.md) - Use these skills when you need to manage user roles, inspect permissions, and verify security-related configuration parameters.
-- [AlloyDB Omni Container](./skills/alloydb-omni-container/SKILL.md) - Use these skills to manage AlloyDB Omni in container environments.
-- [AlloyDB Omni Kubernetes](./skills/alloydb-omni-kubernetes/SKILL.md) - Use these skills to manage AlloyDB Omni on Kubernetes.
+- **data** - Use these tools when you need to explore the database structure, identify schema objects like views and triggers, and execute SQL queries to interact with your data.
+- **performance** - Use these tools when you need to analyze query performance, generate execution plans, check table/column statistics, and monitor overall database activity.
+- **monitor** - Use these tools when you need to troubleshoot production issues by identifying locks, tracking long-running transactions, and getting a high-level view of server state.
+- **optimize** - Use these tools when you need to fine-tune the database engine settings, manage extensions, or optimize the columnar engine for better analytical performance.
+- **health** - Use these tools when you need to audit database health, identify storage bloat, find broken indexes, and verify tablespace or maintenance configurations.
+- **replication** - Use these tools when you need to monitor the health of database replication, manage sync states between nodes, and audit publication tables for distributed setups.
+- **access-control** - Use these tools when you need to manage user roles, inspect permissions, and verify security-related configuration parameters.
+
+For the full, up-to-date list, see the [`alloydb-omni` prebuilt config](https://github.com/googleapis/mcp-toolbox/blob/main/internal/prebuiltconfigs/tools/alloydb-omni.yaml)
+in the MCP Toolbox repository.
+
+## Generating Skills Instead
+
+The tool-backed skills this plugin used to ship were generated from the same prebuilt
+toolsets. If your agent lacks deferred tool loading, or you prefer skills, regenerate
+them with the script in this repository:
+
+```bash
+VERSION=<toolbox version> ./.github/scripts/generate_skills.sh
+```
+
+Use the toolbox version pinned in [`mcp.json`](./mcp.json). A single toolset, without
+the script:
+
+```bash
+npx @toolbox-sdk/server@<toolbox version> --prebuilt alloydb-omni skills-generate \
+  --name "<skill name>" \
+  --toolset "<toolset>" \
+  --description "<what it is for>"
+```
+
+The generated scripts call the toolbox through `npx`, so no binary download is needed.
+See [Generate Agent Skills](https://github.com/googleapis/mcp-toolbox#generate-agent-skills)
+in the MCP Toolbox repository.
+
+The hand-authored skills in `skills/` are unaffected and still ship with the plugin.
 
 ## Troubleshooting
 

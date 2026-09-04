@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "alloydb-omni": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "alloydb-omni",
+        "--stdio"
+      ],
+      "env_vars": [
+        "ALLOYDB_OMNI_HOST",
+        "ALLOYDB_OMNI_PORT",
+        "ALLOYDB_OMNI_DATABASE",
+        "ALLOYDB_OMNI_USER",
+        "ALLOYDB_OMNI_PASSWORD",
+        "ALLOYDB_OMNI_QUERY_PARAMS"
+      ]
+    }
+  }
+}
